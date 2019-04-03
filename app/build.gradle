@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.testepan.moviedb"
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext.dependencies
+    def testDependencies = rootProject.ext.testDependencies
+
+    implementation project(':data')
+    implementation project(':domain')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation dependencies.kotlinStdlib
+    implementation dependencies.appcompat
+    implementation dependencies.core
+    implementation dependencies.constraintLayout
+    implementation dependencies.recyclerView
+    implementation dependencies.cardView
+    implementation dependencies.okHttp
+    implementation dependencies.okHttpLogger
+    implementation dependencies.gson
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitConverter
+    implementation dependencies.retrofitAdapter
+    implementation dependencies.rxAndroid
+    implementation dependencies.rxJava
+    implementation dependencies.ankoCommons
+    implementation dependencies.ankoDesign
+    implementation dependencies.koin
+    implementation dependencies.koinAndroid
+    implementation dependencies.androidKTX
+    implementation dependencies.glide
+
+    // testes unitarios
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.junitPlatform
+    testImplementation testDependencies.mokito
+    testImplementation testDependencies.spek
+    testImplementation testDependencies.spekJunit
+    testImplementation testDependencies.kotlinReflect
+
+    // testes de interface
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+}
