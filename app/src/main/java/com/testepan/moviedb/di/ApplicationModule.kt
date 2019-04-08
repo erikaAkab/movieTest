@@ -1,7 +1,7 @@
 package com.testepan.moviedb.di
 
 import com.testepan.moviedb.BuildConfig
-import com.testepan.service.MovieService
+import com.testepan.data.service.MovieService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
