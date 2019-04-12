@@ -7,7 +7,6 @@ import org.koin.dsl.module
 object DataModule {
 
     val dataModule = module {
-
         single<MoviesRepository> {
             MoviesRepositoryImpl(movieService = get())
         }

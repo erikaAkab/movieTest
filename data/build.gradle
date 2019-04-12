@@ -22,6 +22,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            buildConfigField("String", "API_BASE_URL", '"https://api.themoviedb.org/3/"')
+            buildConfigField("String", "API_KEY", '"6d94ae04cb61b4618f9d52ccd9d7e54a"')
+        }
     }
 
 }

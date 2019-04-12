@@ -7,7 +7,6 @@ import org.koin.dsl.module
 object DomainModule {
 
     val domainModule = module {
-
         single<ListMovies> {
             ListMoviesImpl(repository = get())
         }
