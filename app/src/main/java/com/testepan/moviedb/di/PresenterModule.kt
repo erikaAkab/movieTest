@@ -6,6 +6,9 @@ import org.koin.dsl.module
 
 object PresenterModule {
     val presenterModule = module {
-        single <MainContract.Presenter>{ (view: MainContract.View) -> MainPresenter(view) }
+        factory <MainContract.Presenter>{ (view: MainContract.View) -> MainPresenter(
+            view = view,
+            list = get()
+        ) }
     }
 }

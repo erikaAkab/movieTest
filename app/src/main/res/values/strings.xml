@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PanMovieDBTest</string>
     <string name="clique_aqui">Clique aqui!</string>
+    <string name="movie_error">Tente novamente mais tarde</string>
 </resources>

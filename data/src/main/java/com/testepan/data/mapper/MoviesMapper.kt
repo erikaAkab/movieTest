@@ -12,7 +12,6 @@ object MoviesMapper {
                 imagePath = it.imagePath,
                 title = it.title,
                 description = it.description
-
             )
         }
 }
