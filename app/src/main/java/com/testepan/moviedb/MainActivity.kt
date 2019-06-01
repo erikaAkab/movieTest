@@ -3,6 +3,7 @@ package com.testepan.moviedb
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.testepan.domain.business.Movie
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,8 +20,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         setContentView(R.layout.activity_main)
         rvMovieList?.let {
             it.adapter = MovieAdapter()
-//            it.layoutManager = LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
-            it.layoutManager = GridLayoutManager(applicationContext, 2,RecyclerView.VERTICAL,false)
+            it.layoutManager = LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
         }
 
         presenter.getMovieList()

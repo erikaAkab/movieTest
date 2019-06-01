@@ -9,7 +9,6 @@ object MoviesMapper {
         response.map {
             Movie(
                 id = it.id,
-                imagePath = it.imagePath,
                 title = it.title,
                 description = it.description
             )
